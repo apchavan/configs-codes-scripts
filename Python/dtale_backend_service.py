@@ -113,9 +113,9 @@ def get_instance_count():
 @dtaleflask_app.route("/cleanup_instances", methods=["GET"])
 def cleanup_instances():
     """
-    Function for `GET`ting count of currently running instances of `D-Tale`.
+    Function for clearing all of running `D-Tale` instances and total count.
 
-    This will likely be called from other script as a cron-job from operating system.
+    NOTE: This should be called from other automated scripts via a cron-job in operating system.
     """
     if flask.request.method.upper() != "GET":
         return dtaleflask_app.make_response(
