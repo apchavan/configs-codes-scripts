@@ -8,6 +8,7 @@ import pandas as pd
 from dtale.app import build_app, DtaleFlask
 from dtale.views import startup, DtaleData
 from dtale.global_state import cleanup
+
 # from constants import HOST_ADDRESS, DTALE_PORT_NO
 
 
@@ -141,6 +142,6 @@ def cleanup_instances():
 
 if __name__ == "__main__":
     dtaleflask_app.run(
-        host=HOST_ADDRESS, # TODO: Change this parameter.
-        port=DTALE_PORT_NO, # TODO: Change this parameter.
+        host=HOST_ADDRESS,  # TODO: Change this parameter.
+        port=DTALE_PORT_NO,  # TODO: Change this parameter.
     )
