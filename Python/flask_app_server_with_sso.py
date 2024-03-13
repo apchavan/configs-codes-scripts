@@ -14,14 +14,14 @@ import flask
 import flask_login
 import msal
 
-from modules.utility_functions import (
-    get_flask_server_manager_key,
-    get_sso_client_id,
-    get_sso_client_secret_credential,
-    get_sso_authority,
-    get_sso_graph_endpoint,
-    get_sso_scope,
-)
+# from modules.utility_functions import (
+#     get_flask_server_manager_key,
+#     get_sso_client_id,
+#     get_sso_client_secret_credential,
+#     get_sso_authority,
+#     get_sso_graph_endpoint,
+#     get_sso_scope,
+# )
 
 
 class FlaskServerManager:
