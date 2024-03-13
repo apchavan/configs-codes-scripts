@@ -1,5 +1,5 @@
 
-(*) BlobFuse2 command to mount a Blob Storage container as a file system in Linux:
+(*) BlobFuse2 command to mount a Azure Blob Storage container as a file system in Linux:
     blobfuse2 mount <MOUNT_DIR_PATH> --config-file=<CONFIG_FILE_NAME>.yaml
 
     References:
