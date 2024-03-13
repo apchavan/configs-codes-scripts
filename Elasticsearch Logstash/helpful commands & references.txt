@@ -1,0 +1,155 @@
+
+(*) BlobFuse2 command to mount a Blob Storage container as a file system in Linux:
+    blobfuse2 mount <MOUNT_DIR_PATH> --config-file=<CONFIG_FILE_NAME>.yaml
+
+    References:
+        https://learn.microsoft.com/en-us/azure/storage/blobs/blobfuse2-what-is
+        https://learn.microsoft.com/en-us/azure/storage/blobs/blobfuse2-commands-mount
+
+(*) Start Logstash using custom config file:
+    sudo /usr/share/logstash/bin/logstash --path.settings /etc/logstash/ -f /etc/logstash/conf.d/<CONFIG_FILE>.conf
+
+(*) Start Logstash using custom config file with path data & path logs:
+    sudo /usr/share/logstash/bin/logstash --path.settings /etc/logstash/ -f /etc/logstash/conf.d/<CONFIG_FILE>.conf --path.data <PATH_TO_PERSISTENT_DATA_DIR> --path.logs <PATH_TO_LOGS_DIR>
+
+(*) Update record within index using POST request:
+    curl -X POST "http://<SERVER_IP/localhost>:9200/<INDEX_NAME>/_update/<DOCUMENT_ID>?pretty" -H 'Content-Type: application/json' -d '
+    {
+      "doc" : {
+        "<COLUMN_NAME_1>" : <NEW_VALUE_1>,
+        "<COLUMN_NAME_2>" : <NEW_VALUE_2>
+      }
+    }
+    '
+
+(*) List all indices using GET request:
+    curl -X GET http://<SERVER_IP/localhost>:9200/_cat/indices?v=true&s=index
+
+(*) Stats using GET request:
+    curl -X GET http://<SERVER_IP/localhost>:9200/_stats/
+
+(*) Show document within index:
+    curl -X GET http://<SERVER_IP/localhost>:9200/<INDEX_NAME>/_doc/<DOCUMENT_ID>?pretty
+    Where, pretty => Optional query string to enable well formatted response output in Console/Terminal.
+
+(*) Search for record within index:
+    curl -X GET http://<SERVER_IP/localhost>:9200/<INDEX_NAME>/_search?q=<COLUMN_NAME>=<VALUE_TO_SEARCH>&terminate_after=0
+
+    Where, terminate_after => If want to get only first matched value, then set to 1 otherwise 0 to return all matched.
+
+(*) Get sorted data:
+    curl -X GET "http://<SERVER_IP/localhost>:9200/<INDEX_NAME>/_search?pretty" -H 'Content-Type: application/json' -d'
+    {
+        "from": 0,
+        "size": <TOTAL_LIMIT_TO_FETCH_UPTO_10K_RECORDS>,
+        "sort" : [
+            {
+                "CREATED_DATE" : {
+                    "order" : "desc",
+                    "format": "strict_date_optional_time_nanos"
+                }
+            }
+        ],
+        "query": {
+            "range": {
+                "CREATED_DATE": {
+                    "gt": "2019-01-01",
+                    "lte": "2019-01-03"
+                }
+            }
+        }
+    }
+    '
+
+    References:
+        https://www.elastic.co/guide/en/elasticsearch/reference/current/paginate-search-results.html
+        https://www.getargon.io/docs/articles/elasticsearch/date-range-query.html
+        https://www.elastic.co/guide/en/logstash/current/plugins-filters-date.html
+
+(*) Get specific field from index ID:
+    curl -X GET "http://<SERVER_IP/localhost>:9200/<INDEX_NAME>/_search?pretty" -H 'Content-Type: application/json' -d'
+    {
+        "_source": ["COLUMN_1", "COLUMN_2"],
+        "query" : {
+            "term" : {
+                "COLUMN_NAME" : <VALUE_TO_SEARCH>
+            }
+        }
+    }
+    '
+
+(*) Get specific fields based on highest `_score` in order:
+    curl -X GET "http://<SERVER_IP/localhost>:9200/<INDEX_NAME>/_search?pretty" -H 'Content-Type: application/json' -d'
+    {
+        "sort" : [
+            {
+                "_score" : {
+                    "order" : "desc"  // OR "asc"
+                }
+            }
+        ],
+        "_source": ["COLUMN_1", "COLUMN_2"],
+        "query" : {
+            "term" : {
+                "COLUMN_NAME" : <VALUE_TO_SEARCH>
+            }
+        }
+    }
+    '
+
+(*) Get records based on multiple column value conditions:
+    curl -X GET "http://<SERVER_IP/localhost>:9200/<INDEX_NAME>/_search?size=10000" -H 'Content-Type: application/json' -d'
+    {
+        "query": {
+            "bool": {
+            "must": [
+                {"match" : { "COLUMN_NAME_1": VALUE_TO_SEARCH_1 } },
+                {"match" : { "COLUMN_NAME_2" : "VALUE_TO_SEARCH_2" } }
+            ]
+            }
+        }
+    }
+    '
+
+    References:
+        https://www.elastic.co/guide/en/elasticsearch/reference/current/filter-search-results.html
+        https://stackoverflow.com/a/28543522
+
+(*) Get information about Elastic Nodes:
+    curl -X GET "http://<SERVER_IP/localhost>:9200/_nodes?pretty"
+
+(*) To make a clone of index:
+    // Firstly block write operations on source index which will be cloned.
+    curl -X PUT "<SERVER_IP/localhost>:9200/<SOURCE_INDEX_NAME>/_settings?pretty" -H 'Content-Type: application/json' -d'
+    {
+        "settings": {
+            "index.blocks.write": true
+        }
+    }
+    '
+
+    // Make clone of index.
+    curl -X POST "<SERVER_IP/localhost>:9200/<SOURCE_INDEX_NAME>/_clone/<CLONED_INDEX_NAME>?pretty"
+
+    // Reset above blocked write settings for both source index & cloned index.
+    curl -X PUT "<SERVER_IP/localhost>:9200/<SOURCE_INDEX_NAME>/_settings?pretty" -H 'Content-Type: application/json' -d'
+    {
+        "settings": {
+            "index.blocks.write": false
+        }
+    }
+    '
+
+    curl -X PUT "<SERVER_IP/localhost>:9200/<CLONED_INDEX_NAME>/_settings?pretty" -H 'Content-Type: application/json' -d'
+    {
+        "settings": {
+            "index.blocks.write": false
+        }
+    }
+    '
+
+    References:
+    https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-clone-index.html
+    https://stackoverflow.com/a/34911897
+
+(*) 
