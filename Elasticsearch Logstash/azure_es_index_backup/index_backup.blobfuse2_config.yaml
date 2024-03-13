@@ -1,0 +1,39 @@
+# Configuration to mount Azure Blob Storage Container as a file system on Azure Linux VM instance.
+
+# Refer ./setup/baseConfig.yaml for full set of config parameters
+# Link References :
+# https://github.com/Azure/azure-storage-fuse/blob/main/sampleFileCacheConfig.yaml
+# https://blog.devgenius.io/azure-storage-28840d735cdf
+
+allow-other: false
+
+logging:
+  type: syslog
+  level: log_debug
+
+components:
+  - libfuse
+  - file_cache
+  - attr_cache
+  - azstorage
+
+libfuse:
+  attribute-expiration-sec: 300
+  entry-expiration-sec: 300
+  negative-entry-expiration-sec: 240
+
+file_cache:
+  path: /PATH/TO/CACHE/DIRECTORY  # TODO: Change directory path to store cached files
+  timeout-sec: 300
+  max-size-mb: 262144
+
+attr_cache:
+  timeout-sec: 7200
+
+azstorage:
+  type: block
+  account-name: AZURE_ACCOUNT_NAME  # TODO: Change Azure Account Name
+  account-key: AZURE_ACCOUNT_KEY    # TODO: Change Azure Account Key
+  endpoint: AZURE_ENDPOINT_URL      # TODO: Change Azure Endpoint URL
+  mode: key
+  container: AZURE_CONTAINER_NAME   # TODO: Change Azure Container Name
