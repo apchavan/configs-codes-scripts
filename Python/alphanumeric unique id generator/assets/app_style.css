@@ -1,0 +1,4 @@
+/* Recommended by 'Dash Mantine Components'. */
+input:invalid {
+    outline: none !important;
+}
