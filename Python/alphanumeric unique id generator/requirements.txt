@@ -1,9 +1,10 @@
 black
 pandas
+openpyxl
 numpy
 dash
 dash-mantine-components
 rsa
 requests-ratelimiter
-'qrcode[pil]'
+qrcode[pil]
 segno
