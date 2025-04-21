@@ -1,0 +1,26 @@
+{
+    /*
+     * Default Editor Settings.
+     */
+    "editor.fontFamily": "Cascadia Code Light",
+    "editor.fontSize": 15,
+    "editor.fontLigatures": true,
+    "editor.smoothScrolling": true,
+    "editor.renderLineHighlightOnlyWhenFocus": true,
+    "editor.minimap.renderCharacters": false,
+    "files.autoSave": "afterDelay",
+    "files.eol": "\n",
+    "git.autofetch": true,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.smoothScrolling": true,
+    "window.autoDetectColorScheme": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.startupEditor": "none",
+    /*
+     * Extension Settings.
+     */
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.preferredDarkColorTheme": "Monokai Pro",
+    "workbench.preferredLightColorTheme": "Monokai Pro Light"
+}
