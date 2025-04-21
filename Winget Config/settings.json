@@ -1,0 +1,21 @@
+/*
+ * NOTE: Place this file at the following location:
+ *
+ * C:\Users\USERNAME\AppData\Local\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState
+ *
+ * Replace the `USERNAME` in this path with the actual username you have.
+ */
+{
+    "$schema": "https://aka.ms/winget-settings.schema.json",
+    // For documentation on these settings, see: https://aka.ms/winget-settings
+    // "source": {
+    //    "autoUpdateIntervalInMinutes": 5
+    // },
+    "network": {
+        /*
+         * To enable fast download speeds.
+         * Reference: https://github.com/microsoft/winget-cli/issues/1860#issuecomment-1015482165
+         */
+        "downloader": "wininet"
+    }
+}
