@@ -2,6 +2,7 @@
     /*
      * Default Editor Settings.
      */
+    "editor.cursorSmoothCaretAnimation": "explicit",
     "editor.fontFamily": "Cascadia Code Light",
     "editor.fontSize": 15,
     "editor.fontLigatures": true,
