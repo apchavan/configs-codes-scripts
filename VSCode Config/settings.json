@@ -3,6 +3,7 @@
      * Default Editor Settings.
      */
     "editor.cursorSmoothCaretAnimation": "explicit",
+    "editor.cursorStyle": "block",
     "editor.fontFamily": "Cascadia Code Light",
     "editor.fontSize": 15,
     "editor.fontLigatures": true,
@@ -17,9 +18,9 @@
     "window.autoDetectColorScheme": true,
     "workbench.list.smoothScrolling": true,
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Default Dark+",
-    "workbench.preferredDarkColorTheme": "Default Dark+",
-    "workbench.preferredLightColorTheme": "Default Light+",
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.preferredDarkColorTheme": "Default Dark Modern",
+    "workbench.preferredLightColorTheme": "Default Light Modern",
     /*
      * Extension Settings.
      */
