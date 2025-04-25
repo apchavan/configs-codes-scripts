@@ -17,11 +17,11 @@
     "window.autoDetectColorScheme": true,
     "workbench.list.smoothScrolling": true,
     "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.preferredDarkColorTheme": "Default Dark+",
+    "workbench.preferredLightColorTheme": "Default Light+",
     /*
      * Extension Settings.
      */
-    "workbench.colorTheme": "Monokai Pro",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.preferredDarkColorTheme": "Monokai Pro",
-    "workbench.preferredLightColorTheme": "Monokai Pro Light"
+    "workbench.iconTheme": "material-icon-theme"
 }
