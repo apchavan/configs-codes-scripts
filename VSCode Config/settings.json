@@ -2,6 +2,7 @@
     /*
      * Default Editor Settings.
      */
+    "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": "explicit",
     "editor.cursorStyle": "block",
     "editor.fontFamily": "Cascadia Code Light",
