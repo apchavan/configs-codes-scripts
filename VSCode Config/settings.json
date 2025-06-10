@@ -4,24 +4,25 @@
      */
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": "explicit",
-    "editor.cursorStyle": "block",
+    "editor.cursorStyle": "line",
     "editor.fontFamily": "Cascadia Code Light",
     "editor.fontSize": 15,
     "editor.fontLigatures": true,
     "editor.smoothScrolling": true,
     "editor.renderLineHighlightOnlyWhenFocus": true,
     "editor.minimap.renderCharacters": false,
+    "explorer.autoReveal": false,
     "files.autoSave": "afterDelay",
     "files.eol": "\n",
     "git.autofetch": true,
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "terminal.integrated.smoothScrolling": true,
     "window.autoDetectColorScheme": true,
-    "workbench.list.smoothScrolling": true,
-    "workbench.startupEditor": "none",
     "workbench.colorTheme": "Default Dark Modern",
+    "workbench.list.smoothScrolling": true,
     "workbench.preferredDarkColorTheme": "Default Dark Modern",
     "workbench.preferredLightColorTheme": "Default Light Modern",
+    "workbench.startupEditor": "none",
     /*
      * Extension Settings.
      */
