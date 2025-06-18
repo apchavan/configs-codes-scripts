@@ -2,12 +2,13 @@
     /*
      * Default Editor Settings.
      */
-    "editor.cursorBlinking": "phase",
+    "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": "explicit",
     "editor.cursorStyle": "line",
-    "editor.fontFamily": "Cascadia Code Light",
-    "editor.fontSize": 15,
-    "editor.fontLigatures": true,
+    "editor.fontFamily": "SF Mono Regular",
+    "editor.fontSize": 18,
+    "editor.lineHeight": 1.5,
+    "editor.fontLigatures": false,
     "editor.smoothScrolling": true,
     "editor.renderLineHighlightOnlyWhenFocus": true,
     "editor.minimap.renderCharacters": false,
@@ -18,11 +19,11 @@
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "terminal.integrated.smoothScrolling": true,
     "window.autoDetectColorScheme": true,
-    "workbench.colorTheme": "Default Dark Modern",
     "workbench.list.smoothScrolling": true,
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Default Dark Modern",
     "workbench.preferredDarkColorTheme": "Default Dark Modern",
     "workbench.preferredLightColorTheme": "Default Light Modern",
-    "workbench.startupEditor": "none",
     /*
      * Extension Settings.
      */
