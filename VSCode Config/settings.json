@@ -17,13 +17,15 @@
     "files.eol": "\n",
     "git.autofetch": true,
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.lineHeight": 1.5,
     "terminal.integrated.smoothScrolling": true,
     "window.autoDetectColorScheme": true,
     "workbench.list.smoothScrolling": true,
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Default Dark Modern",
-    "workbench.preferredDarkColorTheme": "Default Dark Modern",
-    "workbench.preferredLightColorTheme": "Default Light Modern",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+    "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
     /*
      * Extension Settings.
      */
