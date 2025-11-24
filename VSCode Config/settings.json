@@ -5,8 +5,7 @@
     "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": "explicit",
     "editor.cursorStyle": "line",
-    "editor.fontFamily": "Cascadia Code Light",
-    "editor.fontSize": 18,
+    "editor.fontSize": 20,
     "editor.lineHeight": 1.5,
     "editor.fontLigatures": true,
     "editor.smoothScrolling": true,
@@ -22,7 +21,6 @@
     "terminal.integrated.lineHeight": 1.5,
     "terminal.integrated.smoothScrolling": true,
     "window.autoDetectColorScheme": false,
-    "workbench.colorTheme": "Abyss",
     "workbench.list.smoothScrolling": true,
     "workbench.startupEditor": "none",
     /*
