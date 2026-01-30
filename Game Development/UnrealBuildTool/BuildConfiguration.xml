@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns="https://www.unrealengine.com/BuildConfiguration">
+	<WindowsPlatform>
+		<Compiler>VisualStudio2022</Compiler>
+		<CompilerVersion>14.44.35207</CompilerVersion>
+	</WindowsPlatform>
+</Configuration>
+
+
+<!--
+
+(1) Location of this global config file on Windows OS exist at path:
+	C:\Users\<USERNAME>\AppData\Roaming\Unreal Engine\UnrealBuildTool
+
+Where,
+	<USERNAME> is the current user's name on the system.
+
+Official documentation of this Build Configuration is available at:
+	https://dev.epicgames.com/documentation/en-us/unreal-engine/build-configuration-for-unreal-engine
+
+
+(2) The Visual Studio's MSVC installation exist at path:
+	C:\Program Files\Microsoft Visual Studio\<VISUAL_STUDIO_YEAR>\<VISUAL_STUDIO_EDITION>\VC\Tools\MSVC
+
+Where,
+	<VISUAL_STUDIO_YEAR> is the installed year edition of Visual Studio IDE on the system like 2019, 2022 or 2026 etc. The 'Compiler' tag above uses this year number as a suffix.
+	<VISUAL_STUDIO_EDITION> is the edition of Visual Studio IDE i.e. Community, Professional, Enterprise or Insiders.
+
+The directory names in the MSVC installation path mentioned above correspond to the MSVC versions like: 14.41.34120, 14.44.35207. The 'CompilerVersion' tag above must have one of these MSVC version numbers as required by the Unreal Engine version mentioned in "Version Compatibility" at:
+	https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine
+
+-->
